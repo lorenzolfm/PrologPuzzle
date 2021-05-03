@@ -44,14 +44,19 @@ exatamenteAEsquerda(X, Y, Lista) :-
 exatamenteADireita(X, Y, Lista) :- exatamenteAEsquerda(Y, X, Lista).
 
 % X está à esquerda de Y (em qualquer posição à esquerda)
-aEsquerda(X,Y,Lista) :-
-   nth0(IndexX,Lista,X),
-   nth0(IndexY,Lista,Y),
+aEsquerda(X, Y, Lista) :-
+   nth0(IndexX, Lista,X),
+   nth0(IndexY, Lista,Y),
    IndexX < IndexY.
 
 % X está à direita de Y (em qualquer posição à direita)
-aDireita(X,Y,Lista) :-
-   aEsquerda(Y,X,Lista).
+aDireita(X, Y, Lista) :-
+   aEsquerda(Y, X, Lista).
+
+% Y está à direita de X e à esquerda de Z, nessa ordem.
+entre(Y, X, Z, Lista) :-
+   aEsquerda(X, Y, Lista),
+   aDireita(Z, Y, Lista).
 
 /*
 solucao(ListaSolucao) :-
