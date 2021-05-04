@@ -49,7 +49,6 @@ noCanto(X, Lista) :- last(Lista, X).
 todosDiferentes([]).
 todosDiferentes([H|T]) :- not(member(H,T)), todosDiferentes(T).
 
-/*
 % navio(Nacionalidade, Saida, Carregamento, Chamine, Destino)
 solucao(ListaSolucao) :-
   ListaSolucao = [
@@ -117,4 +116,31 @@ solucao(ListaSolucao) :-
   nacionalidade(Nacionalidade4),
   nacionalidade(Nacionalidade5),
   todosDiferentes([Nacionalidade1, Nacionalidade2, Nacionalidade3, Nacionalidade4, Nacionalidade5]),
-*/
+
+  saida(Saida1),
+  saida(Saida2),
+  saida(Saida3),
+  saida(Saida4),
+  saida(Saida5),
+  todosDiferentes([Saida1, Saida2, Saida3, Saida4, Saida5]),
+
+  carregamento(Carregamento1),
+  carregamento(Carregamento2),
+  carregamento(Carregamento3),
+  carregamento(Carregamento4),
+  carregamento(Carregamento5),
+  todosDiferentes([Carregamento1, Carregamento2, Carregamento3, Carregamento4, Carregamento5]),
+
+  chamine(Chamine1),
+  chamine(Chamine2),
+  chamine(Chamine3),
+  chamine(Chamine4),
+  chamine(Chamine5),
+  todosDiferentes([Chamine1, Chamine2, Chamine3, Chamine4, Chamine5]),
+
+  destino(Destino1),
+  destino(Destino2),
+  destino(Destino3),
+  destino(Destino4),
+  destino(Destino5),
+  todosDiferentes([Destino1, Destino2, Destino3, Destino4, Destino5]).
