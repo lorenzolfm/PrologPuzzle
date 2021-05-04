@@ -38,6 +38,13 @@ aEsquerda(X, Y, Lista) :-
 % X está à direita de Y, se Y está a esquerda de X.
 aDireita(X, Y, Lista) :- aEsquerda(Y, X, Lista).
 
+% X está ao lado de Y
+aoLado(X, Y, Lista) :- nextto(X, Y, Lista);nextto(Y, X, Lista).
+
+% X está no canto se ele é o primeiro ou último da lista.
+noCanto(X, [X|_]).
+noCanto(X, Lista) :- last(Lista, X).
+
 /*
 % navio(Nacionalidade, Saida, Carregamento, Chamine, Destino)
 solucao(ListaSolucao) :-
