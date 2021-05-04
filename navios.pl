@@ -30,6 +30,9 @@ destino(rotterdam).
 
 
 % X está à esquerda de Y (em qualquer posição à esquerda).
+aEsquerda(X, Y, Lista) :-
+  nth0(IndexX, Lista, X), nth0(IndexY, Lista, Y),
+  IndexX < IndexY.
 
 
 % X está à direita de Y, se Y está a esquerda de X.
