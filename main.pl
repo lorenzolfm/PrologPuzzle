@@ -78,12 +78,12 @@ solucao(ListaSolucao) :-
    % Na PRIMEIRA POSIÇÃO está quem ficará 15 DIAS no Brasil.
    Dias1 = 15,
 
-   % O turista de camisa Verde está em algum lugar ENTRE quem gosta de Água e o Croata, nessa ordem;
+   % O turista de CAMISA VERDE está em algum lugar ENTRE quem gosta de ÁGUA e o CROATA, nessa ordem;
    entre(turista(verde, _, _, _, _, _),
          turista(_, _, agua, _, _, _),
          turista(_, croata, _, _, _, _), ListaSolucao),
 
-   % O turista ALEMÃO está acompanhado do FILHO.
+   % O turista ALEMÃO está ACOMPANHADO do FILHO.
    member(turista(_, alemao, _, _, _, filho), ListaSolucao),
 
    % O turista ESPANHOL é o MAIS VELHO.
@@ -93,7 +93,7 @@ solucao(ListaSolucao) :-
    exatamenteADireita(turista(_, _, _, _, 45, _),
                       turista(_, _, _, _, 31, _), ListaSolucao),
 
-   % O turista de NACIONALIDADE ALEMÃ está EXATAMENTE à ESQUERDA do turista de VERMELHO.
+   % O ALEMÃO está EXATAMENTE À ESQUERDA do turista de VERMELHO.
    exatamenteAEsquerda(turista(_, alemao, _, _, _, _),
                        turista(vermelha, _, _, _, _, _), ListaSolucao),
 
@@ -122,7 +122,7 @@ solucao(ListaSolucao) :-
    % O turista de Verde está em algum lugar ENTRE o Espanho e o turista de Branco, nessa ordem.
    entre(turista(verde, _, _, _, _, _),
          turista(_, espanhol, _, _, _, _),
-         tuista(branca, _, _, _, _, _), ListaSolucao),
+         turista(branca, _, _, _, _, _), ListaSolucao),
 
    % Quem gosta de chá está EXATAMENTE À ESQUERDA de quem veio acompanhado do Amigo.
    exatamenteAEsquerda(turista(_, _, cha, _, _, _),
@@ -140,7 +140,7 @@ solucao(ListaSolucao) :-
 
    % O turista que veio com a Esposa está exatamente à esquerda de quem gosta de leite.
    exatamenteAEsquerda(turista(_, _, _, _, _, esposa),
-                       tuista(_, _, leite, _, _, _), ListaSolucao),
+                       turista(_, _, leite, _, _, _), ListaSolucao),
 
    % Os turistas das camisas amarela e vermelha estão LADO A LADO.
    aoLado(turista(amarela, _, _, _, _, _),
