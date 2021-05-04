@@ -46,7 +46,7 @@ aEsquerda(X, Y, Lista) :-
 % X está à direita de Y, se Y está a esquerda de X.
 aDireita(X, Y, Lista) :- aEsquerda(Y, X, Lista).
 
-% X está em algum lugar entre X e Y.
+% X está em algum lugar entre Y e Z.
 entre(X, Y, Z, Lista) :-
    aDireita(X, Y, Lista),
    aEsquerda(X, Z, Lista).
@@ -66,7 +66,7 @@ aoLado(X, Y, Lista) :- nextto(X, Y, Lista);nextto(Y, X, Lista).
 todosDiferentes([]).
 todosDiferentes([H|T]) :- not(member(H,T)), todosDiferentes(T).
 
-% Cada navio é um predicado como o abaixo.
+% Cada turista é um predicado como o abaixo.
 % turista(Camisa, Nacionalidade, Bebida, Dias, Idade, Companhia)
 
 % Implementando solucao ...
