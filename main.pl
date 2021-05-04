@@ -97,11 +97,11 @@ solucao(ListaSolucao) :-
    exatamenteAEsquerda(turista(_, alemao, _, _, _, _),
                        turista(vermelha, _, _, _, _, _), ListaSolucao),
 
-   % O turista de 36 ANOS está exatamente à esquerda do turista que gosta de leite.
+   % O turista de 36 ANOS está EXATAMENTE À ESQUERDA do turista que gosta de LEITE.
    exatamenteAEsquerda(turista(_, _, _, _, 36, _),
                        turista(_, _, leite, _, _, _), ListaSolucao),
 
-   % O turista do meio está acompanhado do AMIGO.
+   % O turista do MEIO está acompanhado do AMIGO.
    Companhia3 = amigo,
 
    % O turista de AZUL está AO LADO do turista que ficará 10 DIAS no brasil.
@@ -119,34 +119,34 @@ solucao(ListaSolucao) :-
    exatamenteADireita(turista(_, _, _, _, 28, _),
                       turista(_, _, _, 25, _, _), ListaSolucao),
 
-   % O turista de Verde está em algum lugar ENTRE o Espanho e o turista de Branco, nessa ordem.
+   % O turista de VERDE está em algum lugar ENTRE o ESPANHOL e o turista de BRANCO, nessa ordem.
    entre(turista(verde, _, _, _, _, _),
          turista(_, espanhol, _, _, _, _),
          turista(branca, _, _, _, _, _), ListaSolucao),
 
-   % Quem gosta de chá está EXATAMENTE À ESQUERDA de quem veio acompanhado do Amigo.
+   % Quem gosta de CHÁ está EXATAMENTE À ESQUERDA de quem veio acompanhado do AMIGO.
    exatamenteAEsquerda(turista(_, _, cha, _, _, _),
                        turista(_, _, _, _, _, amigo), ListaSolucao),
 
-   % Na QUINTA POSIÇÃO, está o turista que veio com a Namorada.
+   % Na QUINTA POSIÇÃO, está o turista que veio com a NAMORADA.
    Companhia5 = namorada,
 
-   % Quem está acompanhado da Esposa está AO LADO de quem ficará 20 DIAS no Brasil.
+   % Quem está acompanhado da ESPOSA está AO LADO de quem ficará 20 DIAS no Brasil.
    aoLado(turista(_, _, _, _, _, esposa),
           turista(_, _, _, 20, _, _), ListaSolucao),
 
-   % O turista que gosta de café está na quinta posição.
+   % O turista que gosta de CAFÉ está na QUINTA POSIÇÃO.
    Bebida5 = cafe,
 
-   % O turista que veio com a Esposa está exatamente à esquerda de quem gosta de leite.
+   % O turista que veio com a ESPOSA está EXATAMENTE À ESQUERDA de quem gosta de LEITE.
    exatamenteAEsquerda(turista(_, _, _, _, _, esposa),
                        turista(_, _, leite, _, _, _), ListaSolucao),
 
-   % Os turistas das camisas amarela e vermelha estão LADO A LADO.
+   % Os turistas das camisas AMARELA e VERMELHA estão LADO A LADO.
    aoLado(turista(amarela, _, _, _, _, _),
           turista(vermelha, _, _, _, _, _), ListaSolucao),
 
-   % O turista de 31 anos veio com o amigo.
+   % O turista de 31 ANOS veio com o AMIG.
    member(turista(_, _, _, _, 31, amigo), ListaSolucao),
 
    camisa(Camisa1),
