@@ -36,6 +36,7 @@ aEsquerda(X, Y, Lista) :-
 
 
 % X está à direita de Y, se Y está a esquerda de X.
+aDireita(X, Y, Lista) :- aEsquerda(Y, X, Lista).
 
 /*
 % navio(Nacionalidade, Saida, Carregamento, Chamine, Destino)
