@@ -42,7 +42,6 @@ aEsquerda(X, Y, Lista) :-
   nth0(IndexX, Lista, X), nth0(IndexY, Lista, Y),
   IndexX < IndexY.
 
-
 % X está à direita de Y, se Y está a esquerda de X.
 aDireita(X, Y, Lista) :- aEsquerda(Y, X, Lista).
 
@@ -50,6 +49,17 @@ aDireita(X, Y, Lista) :- aEsquerda(Y, X, Lista).
 entre(X, Y, Z, Lista) :-
    aDireita(X, Y, Lista),
    aEsquerda(X, Z, Lista).
+
+% X está EXATAMENTE a esquerda de Y.
+exatamenteAEsquerda(X, Y, Lista) :-
+   nth0(IndexX, Lista, X), nth0(IndexY, Lista, Y),
+   IndexX =:= IndexY - 1.
+
+% X está EXATAMENTE a direita de Y.
+exatamenteADireita(X, Y, Lista) :- exatamenteAEsquerda(Y, X, Lista).
+
+% X está ao lado de Y
+aoLado(X, Y, Lista) :- nextto(X, Y, Lista);nextto(Y, X, Lista).
 
 /*
 % turista(Camisa, Nacionalidade, Bebida, Dias, Idade, Companhia)
