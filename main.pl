@@ -1,3 +1,5 @@
+% Implementando fatos ...
+
 camisa(amarela).
 camisa(azul).
 camisa(branca).
@@ -34,8 +36,7 @@ companhia(irma).
 companhia(esposa).
 companhia(namorada).
 
-% X é o primeiro da Lista.
-primeiro(X, [X|_]).
+% Implementando regras ...
 
 % X está à esquerda de Y (em qualquer posição à esquerda).
 aEsquerda(X, Y, Lista) :-
@@ -65,7 +66,11 @@ aoLado(X, Y, Lista) :- nextto(X, Y, Lista);nextto(Y, X, Lista).
 todosDiferentes([]).
 todosDiferentes([H|T]) :- not(member(H,T)), todosDiferentes(T).
 
+% Cada navio é um predicado como o abaixo.
 % turista(Camisa, Nacionalidade, Bebida, Dias, Idade, Companhia)
+
+% Implementando solucao ...
+
 solucao(ListaSolucao) :-
    ListaSolucao = [
       turista(Camisa1, Nacionalidade1, Bebida1, Dias1, Idade1, Companhia1),
@@ -74,6 +79,8 @@ solucao(ListaSolucao) :-
       turista(Camisa4, Nacionalidade4, Bebida4, Dias4, Idade4, Companhia4),
       turista(Camisa5, Nacionalidade5, Bebida5, Dias5, Idade5, Companhia5)
    ],
+
+  % Implementando dicas ...
 
    % Na PRIMEIRA POSIÇÃO está quem ficará 15 DIAS no Brasil.
    Dias1 = 15,
@@ -148,6 +155,8 @@ solucao(ListaSolucao) :-
 
    % O turista de 31 ANOS veio com o AMIG.
    member(turista(_, _, _, _, 31, amigo), ListaSolucao),
+
+   % Testando todas as possibilidade ...
 
    camisa(Camisa1),
    camisa(Camisa2),
